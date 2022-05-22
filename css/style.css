@@ -1,0 +1,965 @@
+:root{
+    --main-color:#333333;
+    --second_color:#00c9fb;
+    --font_color: #ecf2f6;
+    --transparent-color: rgb(15 116 143 / 70%);
+}
+
+*{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+a{
+  text-decoration: none;
+}
+ul{
+  list-style: none;
+}
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+    /* Small */
+    @media (min-width: 768px) {
+        .container {
+          width: 750px;
+        }
+      }
+      /* Medium */
+      @media (min-width: 992px) {
+        .container {
+          width: 970px;
+        }
+      }
+      /* Large */
+      @media (min-width: 1200px) {
+        .container {
+          width: 1170px ;
+        }
+      }
+/* style header  */
+header{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+} 
+header .container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--font_color);
+  height: 81px;
+  z-index: 2;
+}
+.logo{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.logo i{
+  color: var(--second_color);
+  font-size: 37px;
+  margin-right: 10px;
+}
+.logo h1{
+  font-size: 37px;
+  font-weight: 600;
+  color: var(--font_color);
+}
+header ul{
+  display: flex;
+  justify-content: space-between;
+  color: var(--font_color);
+  width: 503px;
+  height: 101%;
+  align-items: center;
+}
+header ul li{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  transition: all 0.5s ease-in-out;
+}
+header ul .active{
+  border-bottom: 1px solid var(--second_color);
+}
+header ul li:hover:not(.search){
+  border-bottom: 1px solid var(--second_color);
+}
+header ul li:hover a{
+  color: var(--second_color);
+}
+header ul .active a{
+  color: var(--second_color);
+}
+header ul a{
+  color: var(--font_color);
+  font-weight: 400;
+  transition: all 0.5s;
+}
+header ul .search{
+  position: relative;
+  margin-left: 29px;
+}
+header ul .search i{
+  font-size: 20px;
+}
+header ul .search::before{
+  content: "";
+  position: absolute;
+  height: 37px;
+  width: 1.5px;
+  right: 30px;
+  background-color: var(--font_color);
+}
+/* landing style  */
+.main{
+  height: 100vh;
+  background-image: url(https://elzerowebschool.github.io/HTML_And_CSS_Template_Two/images/landing.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.overlay{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0 0 0 / 60%);
+  z-index: 1;
+}  
+.text{
+  position: absolute;
+  top: 50%;
+  width: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  background-color: var(--transparent-color);
+  z-index: 2;
+  padding: 50px;
+  padding-left: 150px !important;
+}
+.text h1{
+  color: var(--font_color);
+  line-height: 1.5;
+  font-weight: normal;
+  font-size: 32px;
+  margin-bottom: 25px;
+}
+.text p{
+  color: var(--font_color);
+  font-size: 14px;
+  line-height: 2;
+}
+.main .arrow1,
+.main .arrow2{
+  position: absolute ;
+  font-size: 34px;
+  color: var(--font_color);
+  transition: all 1s ease-in-out;
+  z-index: 2;
+}
+.main .arrow1:hover,
+.main .arrow2:hover{
+  color: var(--second_color);
+  cursor: pointer;
+}
+.main .arrow1{
+  right: 10px;
+  top: 50%;
+}
+.main .arrow2{
+  left: 10px;
+  top: 50%;
+}
+.dots{
+  position: absolute;
+  bottom: 28px;
+  display: flex;
+  justify-content: space-around;
+  z-index: 2;
+  right: 50%;
+}
+.dots div{
+  height: 20px;
+  width: 20px;
+  border: 1px solid var(--font_color);
+  margin: 10px;
+  border-radius: 18px;
+  transition: all 1s linear;
+}
+.dots div:hover{
+  background-color: var(--second_color);
+  border: none !important;
+  cursor: pointer;
+}
+.dots .active{
+  background-color: var(--second_color);
+  border: none !important;
+}
+.dots .active:hover{
+  border: 1px solid var(--font_color) !important;
+  background-color: transparent;
+}
+/* styel SERVICES */
+.serv{
+  height: 100vh;
+}
+.serv .container{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  height: inherit;
+}
+.title{
+  text-align: center;
+  margin-top: -83px;
+}
+.title h1{
+  margin-top: 94px;
+  margin-bottom: 68px;
+  font-size: 44px;
+  font-weight: 400;
+  color: var(--main-color);
+  position: relative;
+}
+.title h1 .line{
+  position: absolute;
+  height: 2px;
+  width: 22%;
+  background-color: var(--main-color);
+  top: 70px;
+  right: 39%;
+}
+.title h1 .line .ball{
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--main-color);
+  top: -9px;
+  right: 40%;
+  border-radius: 11px;
+  background-color: white;
+  transition: all 1s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.title h1:hover .ball{
+  right: 90%;
+}
+.title h3{
+  width: 550px;
+  line-height: 2;
+  color: var(--main-color);
+  font-weight: 200;
+  margin-bottom: 100px;
+}
+.serv2{
+  display: grid;
+  grid-template-columns: repeat(2 , auto);
+  grid-gap: 20px 20px;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  margin-top: -66px;
+}
+.serv2 .icon{
+  position: absolute;
+  margin-top: 5px;
+  font-size: 50px;
+  color: var(--main-color);
+}
+.serv2 .text2{
+  padding: 0 100px;
+}
+.serv2 .text2 h1{
+  color: var(--second_color);
+  font-size: 30px;
+  font-weight: 600;
+}
+.serv2 .text2 p{
+  color: var(--main-color);
+  font-weight: 300;
+  line-height: 2;
+}
+/* style OUR DESIGN COMES WITH... */
+.ourDes{
+  background-image: url(https://elzerowebschool.github.io/HTML_And_CSS_Template_Two/images/design-features.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.ourDes .container{
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+}
+.ourDes img{
+  position: relative;
+  top: 180px;
+  z-index: 2;
+}
+.ourDes .container .text3{
+  position: absolute;
+  top: 50%;
+  width: 57%;
+  transform: translateY(-50%);
+  right: 0;
+  background-color: var(--transparent-color);
+  z-index: 2;
+  padding: 50px;
+  padding-left: 61px ;
+  height: 356px;
+}
+.ourDes .container .text3 h1{
+  font-size: 30px;
+    margin-top: -1px;
+    margin-bottom: 40px;
+    font-weight: 500;
+    color: var(--font_color);
+    z-index: 2;
+}
+.ourDes .container ul li{
+  line-height: 2;
+  color: var(--font_color);
+  font-weight: 400;
+  position: relative;
+  margin-bottom: 20px;
+  z-index: 2;
+}
+.ourDes .container ul li span{
+  margin-right: 20px;
+}
+/* style PORTFOLIO  */
+.porto{
+  height: 100vh;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+}
+.porto .cho{
+  width: 26%;
+  display: flex;
+  justify-content: space-evenly;
+}
+.porto .cho li{
+  padding: 10px;
+}
+.porto .cho .active{
+  background-color: var(--second_color);
+  color: var(--font_color);
+}
+.porto .media img{
+  max-width: 100%;
+  transition: all 0.3s;
+}
+.porto .media{
+  display: grid;
+  grid-template-columns: repeat(4,auto);
+  margin-top: 50px;
+}
+.porto .btn{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.porto .btn button{
+  margin: 16px 0 50px 0;
+  width: 77px;
+  height: 51px;
+  background-color: var(--second_color);
+  border: none;
+  color: var(--font_color);
+}
+.box{
+  overflow: hidden;
+  position: relative;
+}
+
+.box:hover img{
+  transform: rotate(3deg) scale(1.1);
+}
+.box .caption{
+  position: absolute;
+  width: 100%;
+  background-color: var(--font_color);
+  padding: 20px 10px;
+  bottom: 39px;
+  height: 80px;
+  top: 400px;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.box:hover .caption{
+  top: 176px;
+}
+.box .caption h1{
+  color: var(--main-color);
+  font-size: 15px;
+  font-weight: 500;
+}
+.box .caption h3{
+  color: var(--second_color);
+  font-size: 15px;
+  font-weight: 500;
+}
+/* style video  */
+.video {
+  height: 100vh;
+  position: relative;
+  margin-top: 300px;
+  overflow: hidden;
+}
+.video video{
+  width: 100%;
+}
+.video .text4{
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  transform: translateY(-50%);
+  left: 0;
+  background-color: var(--transparent-color);
+  z-index: 2;
+  padding: 50px;
+  padding-left: 150px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 60px;
+}
+.video  .text4 h1{
+  color: var(--font_color);
+  font-size: 25px;
+  font-weight: 400;
+}
+.video  .text4 p{
+  color: var(--font_color);
+  padding: 17px;
+}
+.video .text4 button{
+  padding: 7px;
+  background-color: var(--main-color);
+  border: none;
+  color: var(--font_color);
+}
+/* style about */
+.about .container{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+.about .container .title{
+  margin-top: 50px;
+}
+.about .container img{
+  position: absolute;
+  bottom: -128px;
+}
+/* style rewards */
+.rew{
+  height: 75vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  background-image: url(https://elzerowebschool.github.io/HTML_And_CSS_Template_Two/images/stats.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  position: relative;
+}
+.rew .stat{
+  height: 60%;
+  width: 75%;
+  background-color: var(--transparent-color);
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+.rew .stat .stat2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 51px;
+}
+.rew .stat .stat2 .icon{
+  height: 40px;
+  width: 40px;
+  border-radius: 50px;
+  background-color: var(--main-color);
+  margin-bottom: 25px;
+  color: var(--font_color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.rew .stat .stat2 .num{
+  margin-bottom: 20px;
+  font-size: 64px;
+  color: var(--font_color);
+  font-weight: 400;
+}
+.rew .stat .stat2 .caption{
+  color: var(--font_color);
+}
+/* style skills */
+.skills .container{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.skills .container .skill,
+.skills .container .cer{
+  height: 100vh;
+  width: 50%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+.skills .container .cer{
+  position: relative;
+}
+.skills .container .cer h1{
+  margin: 32px 0 30px;
+  font-weight: normal;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--main-color);
+}
+
+.skills .container .cer p{
+  text-align: center;
+  font-size: 20px;
+  font-weight: 200;
+  margin-bottom: 14px;
+}
+.skills .container .cer img{
+  overflow: hidden;
+  height: 450px;
+  width: 100%;
+}
+.skills .container .cer .dots{
+  right: 40% !important;
+}
+.skills .container .cer .dots div{
+  border: var(--main-color) solid 1px !important;
+}
+.skills .container .skill h1{
+  margin: 32px 0 30px;
+  font-weight: normal;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--main-color);
+}
+.skills .container .skill p{
+  text-align: center;
+  font-size: 20px;
+  font-weight: 200;
+  margin-bottom: 14px;
+}
+.skills .container .skill .charts{
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: start;
+  flex-direction: column;
+}
+.skills .container .skill .charts h1{
+  font-size: 15px;
+  margin-bottom: -20px;
+  padding-right: 436px;
+  text-align: start;
+}
+.skills .container .skill .chart{
+  /* background-color: #dedadc; */
+  background-color: var(--transparent-color);
+  height: 29px;
+  width: 481px;
+}
+.skills .container .skill .chart .m{
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  background-color: var(--main-color);
+  width: 0%;
+  transition: all 1s ease-in-out;
+}
+.skills .container .skill .chart .m .b{
+  position: absolute;
+  top: -31px;
+  right: -19px;
+  opacity: 0;
+  transition: all 0.5s 1s;
+  text-align: center;
+  background-color: black;
+  padding: 2px;
+  border-radius: 6px;
+  height: 24px;
+  width: 39px;
+}
+.skills .container .skill .chart .m .b h5{
+  color: var(--font_color);
+}
+.skills .container .skill .chart:hover #htmlCss{
+  width: 99%;
+}
+.skills .container .skill .chart:hover #js{
+  width: 75%;
+}
+.skills .container .skill .chart:hover #c{
+  width: 85%;
+}
+.skills .container .skill .chart:hover #py{
+  width: 80%;
+}
+.skills .container .skill .chart:hover #ad{
+  width: 86%;
+}
+.skills .container .skill .chart:hover .b{
+  opacity: 1;
+}
+/* style qout */
+.qout{
+  position: relative;
+  background-image: url(https://elzerowebschool.github.io/HTML_And_CSS_Template_Two/images/quote.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 40vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.qout .container{
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.qout .container q{
+  font-size: 30px;
+  text-align: center;
+  color: var(--font_color);
+  margin-bottom: 10px;
+}
+.qout .container span{
+  font-size: 20px;
+  color: var(--font_color);
+}
+/* style pricing  */
+.pricing .container{
+  height: 150vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.pricing .container .title{
+  margin-top: 10px;
+}
+.pricing .container .pricinCards{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-direction: row;
+}
+.pricing .container .pricinCards .pricingCard{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 20px;
+}
+.pricing .container .pricinCards .pricingCard .main2 h3{
+  font-size: 20px;
+  margin-bottom: 10px;
+  font-weight: 300;
+
+}
+.pricing .container .pricinCards .pricingCard .main2{
+  padding: 40px 20px;
+  border-top: 1px solid var(--second_color);
+  border-bottom: 1px solid var(--second_color);
+  width: 216px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.pricing .container .pricinCards .pricingCard .main2 span{
+  position: relative;
+  font-size: 60px;
+  font-weight: 700;
+}
+.pricing .container .pricinCards .pricingCard .main2 span::before{
+  content: "$";
+  position: absolute;
+  top: 0px;
+  right: 80px;
+  font-size: 23px;
+  font-weight: 100;
+}
+.pricing .container .pricinCards .pricingCard .main2 span::after{
+  content: "/Mo";
+  position: absolute;
+  font-size: 14px;
+  bottom: 12px;
+  left: 82px;
+  font-weight: bolder;
+}
+.pricing .container .pricinCards .pricingCard .desc{
+  padding: 2px 20px;
+  border-bottom: 1px solid var(--second_color);
+  width: 216px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.pricing .container .pricinCards .pricingCard .desc ul{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.pricing .container .pricinCards .pricingCard .desc ul li:not(.last){
+  padding: 20px;
+  border-bottom: 1px solid var(--second_color);
+  width: 179px;
+}
+.last{
+  padding: 20px;
+}
+.pricing .container .pricinCards .pricingCard button{
+  padding: 16px 16px;
+  margin: 20px;
+  background: none;
+  border: 1px solid var(--second_color);
+  color: var(--font_color);
+}
+.pricing .container .pricinCards .pricingCard button:checked{
+  color: var(--second_color);
+}
+.contactPricing {
+  text-align: center;
+}
+.contactPricing h1{
+  font-size: 20px;
+  line-height: 2;
+  color: var(--main-color);
+  font-weight: 500;
+}
+.contactPricing button{
+  padding: 14px 28px;
+  margin-bottom: 50px;
+  background-color: var(--second_color);
+  color: var(--font_color);
+  border: none;
+}
+.contactPricing button a{
+  color: var(--font_color);
+}
+/* styel email  */
+.email{
+  position: relative;
+  height: 40vh;
+  background-image: url(https://elzerowebschool.github.io/HTML_And_CSS_Template_Two/images/subscribe.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.email .container{
+  z-index: 2;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100%;
+}
+.email .container .sub{
+  position: relative;
+  z-index: 2;
+  margin-right: 216px;
+}
+.email .container .sub input{
+  width: 294px;
+  height: 60px;
+  background-color: transparent;
+  border: var(--font_color) solid 1px;
+  padding: 0 50px;
+  color: var(--second_color);
+  font-size: 20px;
+}
+.email .container .sub input::placeholder{
+  font-size: 20px;
+  color: var(--font_color);
+  padding-bottom: 5px;
+}
+.email .container .sub button{
+  position: absolute;
+  height: 100%;
+  width: 42%;
+  background-color: var(--second_color );
+  border: 1px solid var(--font_color);
+}
+.email .container .sub button a{
+  color: var(--font_color);
+}
+.email .container .sub i{
+  position: absolute;
+  color: var(--font_color);
+  font-size: 22px;
+  top: 28%;
+  left: 12px;
+}
+.email .container h3{
+  z-index: 2;
+  color: var(--font_color);
+  line-height: 2;
+  font-size: 13px;
+}
+/* style CONTACT US  */
+.contact .container{
+  height: 100vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+.contact .container .main3{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.contact .container .main3 .info{
+  flex-basis: 28%;
+}
+.contact .container .main3 .info .part1 h4{
+  margin: 16px 1px;
+  font-weight: 600;
+  font-size: 20px;
+}
+.contact .container .main3 .info .part1 li{
+  line-height: 2;
+}
+.contact .container .main3 .info .part1 ul{
+  margin-bottom: 91px;
+}
+
+.contact .container .main3 .info .part2 h4{
+  margin: 16px 1px;
+  font-weight: 600;
+  font-size: 20px;
+}
+.contact .container .main3 .info .part2 li{
+  line-height: 2;
+  font-style: italic;
+}
+.contact .container .main3 form{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+.contact .container .main3 form input{
+  width: 739px;
+  height: 60px;
+  margin: 17px;
+  padding: 10px;
+}
+.contact .container .main3 form textarea{
+  width: 739px;
+  margin: 17px;
+  padding: 10px;
+}
+.contact .container .main3 form .sub2{
+  width: 153px;
+  align-self: end;
+  background-color: var(--second_color);
+  border: none;
+  color: var(--font_color);
+}
+/* style footer  */
+footer{
+  position: relative;
+  margin-top: 183px;
+  height: 50vh;
+  background-image: url(https://elzerowebschool.github.io/HTML_And_CSS_Template_Two/images/subscribe.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+footer .container{
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+}
+footer .container img{
+  z-index: 2;
+}
+footer .container ul{
+  z-index: 2;
+  display: flex;
+  justify-content: space-evenly;
+  width: 262px;
+  margin-bottom: 60px;
+  padding: 11px;
+}
+footer .container ul li a{
+  color: var(--font_color);
+  font-size: 20px;
+  transition: all 1s;
+}
+footer .container ul li a:hover{
+  color: var(--second_color);
+}
+footer .container h1{
+  z-index: 2;
+    color: var(--font_color);
+    font-weight: 400;
+    border-bottom: 2px solid var(--font_color);
+    height: 45px;
+    width: 262px;
+    text-align: center;
+    font-size: 28px;
+    margin-top: 50px;
+}
+footer .container h2{
+  z-index:2 ;
+  color: var(--font_color);
+}
+footer .container h2 span{
+  z-index: 2;
+  color: var(--second_color);
+}
