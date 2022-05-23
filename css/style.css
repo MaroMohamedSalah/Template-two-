@@ -106,7 +106,7 @@ header .fa-bars{
     align-items: baseline;
     padding: 10px;
     height: fit-content;
-    background-color: var(--transparent-color);
+    background-color: #333333cc;
     width: 100%;
   }
   header .fa-bars:hover + .links li{
@@ -238,6 +238,8 @@ header .links .search::before{
 @media (max-width: 768px){
   .text{
     width: 100%;
+    padding-left: 86px !important;
+    z-index: 1;
   }
 }
 .text h1{
@@ -279,7 +281,8 @@ header .links .search::before{
   display: flex;
   justify-content: space-around;
   z-index: 2;
-  right: 50%;
+  left: 50%;
+  transform: translateX(-50%);
 }
 .dots div{
   height: 20px;
@@ -382,13 +385,15 @@ header .links .search::before{
   text-align: center;
   }
   .serv{
-  height: 250vh;
+  height: fit-content;
+  margin-bottom: 30px;
   }
   .serv2 .text2 p{
   text-align: center;
   }
   .title h3{
   width: 100% !important;
+  }
 }
 .serv2 .icon{
   position: absolute;
@@ -440,6 +445,14 @@ header .links .search::before{
   padding-left: 61px ;
   height: 356px;
 }
+@media (max-width: 768px){
+  .ourDes img{
+    display: none;
+  }
+  .ourDes .container .text3{
+    width: 100%;
+  }
+}
 .ourDes .container .text3 h1{
   font-size: 30px;
     margin-top: -1px;
@@ -487,6 +500,14 @@ header .links .search::before{
   display: grid;
   grid-template-columns: repeat(4,auto);
   margin-top: 50px;
+}
+@media (max-width: 768px){
+  .porto .media{
+    grid-template-columns: repeat(1,auto);
+  }
+  .porto{
+    height: fit-content;
+  }
 }
 .porto .btn{
   width: 100%;
@@ -562,6 +583,17 @@ header .links .search::before{
   flex-direction: column;
   padding: 60px;
 }
+@media (max-width: 768px){
+  .video {
+    height: 100%;
+  }
+  .video .text4{
+    padding-left: 0 !important;
+    padding: 0 !important;
+    text-align: center;
+    height: 100%;
+  }
+}
 .video  .text4 h1{
   color: var(--font_color);
   font-size: 25px;
@@ -593,6 +625,11 @@ header .links .search::before{
   position: absolute;
   bottom: -128px;
 }
+@media (max-width: 768px){
+  .about .container img{
+    display: none;
+  }
+}
 /* style rewards */
 .rew{
   height: 75vh;
@@ -615,6 +652,14 @@ header .links .search::before{
   justify-content: center;
   align-items: center;
   flex-direction: row;
+}
+@media (max-width: 768px){
+  .rew {
+    height: fit-content;
+  }
+  .rew .stat{
+    flex-direction: column !important;
+  }
 }
 .rew .stat .stat2{
   display: flex;
@@ -650,6 +695,15 @@ header .links .search::before{
   justify-content: center;
   align-items: center;
 }
+@media (max-width: 768px){
+  .skills .container{
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+}
 .skills .container .skill,
 .skills .container .cer{
   height: 100vh;
@@ -681,8 +735,12 @@ header .links .search::before{
   height: 450px;
   width: 100%;
 }
-.skills .container .cer .dots{
-  right: 40% !important;
+@media (max-width: 768px){
+  .skills .container .cer img{
+    width: 100%;
+    height: -webkit-fill-available;
+    margin: 113px;
+  }
 }
 .skills .container .cer .dots div{
   border: var(--main-color) solid 1px !important;
@@ -707,6 +765,18 @@ header .links .search::before{
   align-items: start;
   flex-direction: column;
 }
+@media (max-width: 768px){
+  .skills .container .skill .charts{
+    align-items: center !important;
+  }
+  .skills .container .skill .chart{
+    width: 84% !important;
+  }
+  .skills .container .skill .charts h1{
+    padding-right: 347px !important;
+    text-align: start;
+  }
+}
 .skills .container .skill .charts h1{
   font-size: 15px;
   margin-bottom: -20px;
@@ -714,7 +784,6 @@ header .links .search::before{
   text-align: start;
 }
 .skills .container .skill .chart{
-  /* background-color: #dedadc; */
   background-color: var(--transparent-color);
   height: 29px;
   width: 481px;
@@ -797,6 +866,14 @@ header .links .search::before{
   justify-content: center;
   flex-direction: column;
   align-items: center;
+}
+@media (max-width: 768px){
+  .pricing .container{
+    height: fit-content !important;
+  }
+  .pricing .container .pricinCards{
+    flex-direction: column !important;
+  }
 }
 .pricing .container .title{
   margin-top: 10px;
@@ -920,6 +997,16 @@ header .links .search::before{
   align-items: center;
   height: 100%;
 }
+@media (max-width: 768px){
+  .email .container{
+    align-items: flex-start !important;
+    flex-direction: column !important;
+  }
+  .email .container .sub input{
+    width: 232px !important;
+    padding: 0 40px !important;
+  }
+}
 .email .container .sub{
   position: relative;
   z-index: 2;
@@ -970,6 +1057,16 @@ header .links .search::before{
   align-items: center;
   flex-direction: column;
 }
+@media (max-width: 768px){
+  .contact .container{
+    height: fit-content;
+  }
+  .contact .container .main3{
+    justify-content: center !important;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+}
 .contact .container .main3{
   width: 100%;
   display: flex;
@@ -1015,6 +1112,19 @@ header .links .search::before{
   width: 739px;
   margin: 17px;
   padding: 10px;
+}
+@media (max-width: 768px){
+  .contact .container .main3 form input{
+    width: 100% !important;
+    margin: 0 15px !important;
+    margin-bottom: 15px !important;
+  }
+  .contact .container .main3 form textarea{
+    width: 100% !important;
+  }
+  .contact .container .main3 form .sub2{
+    align-self: unset !important;
+  }
 }
 .contact .container .main3 form .sub2{
   width: 153px;
@@ -1073,6 +1183,11 @@ footer .container h1{
 footer .container h2{
   z-index:2 ;
   color: var(--font_color);
+}
+@media (max-width: 768px){
+  footer .container h2{
+    font-size: 20px;
+  }
 }
 footer .container h2 span{
   z-index: 2;
