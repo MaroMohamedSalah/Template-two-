@@ -59,9 +59,18 @@ header .container{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid var(--font_color);
+  /* border-bottom: 1px solid var(--font_color); */
   height: 81px;
-  z-index: 2;
+  z-index: 3;
+  position: relative;
+}
+header .container::after{
+  content: "";
+  position: absolute;
+  height: 1px;
+  width: 98%;
+  background-color: var(--font_color);
+  bottom: 0px;
 }
 .logo{
   display: flex;
@@ -78,51 +87,126 @@ header .container{
   font-weight: 600;
   color: var(--font_color);
 }
-header ul{
+header .fa-bars{
+  font-size: 22px;
+  color: var(--font_color);
+}
+@media (min-width: 768px) {
+  header .fa-bars{
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  header .fa-bars:hover + .links{
+    display: flex;
+    position: absolute;
+    top: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: baseline;
+    padding: 10px;
+    height: fit-content;
+    background-color: var(--transparent-color);
+    width: 100%;
+  }
+  header .fa-bars:hover + .links li{
+    margin-bottom: 11px;
+    width: 100%;
+    height: 100%;
+  }
+  header .fa-bars:hover + .links li a{
+    height: 100%;
+    padding: 15px 0px;
+  }
+  header .fa-bars:hover + .links .search{
+    display: none;
+  }
+  header .links .active{
+    border-bottom: 1px solid var(--second_color);
+  }
+  header .links li:hover:not(.search){
+    border-bottom: 1px solid var(--second_color);
+  }  
+}
+header .links{
   display: flex;
   justify-content: space-between;
   color: var(--font_color);
   width: 503px;
-  height: 101%;
+  height: 100%;
   align-items: center;
+  position: relative;
+  z-index: 3;
 }
-header ul li{
+header .links li{
   height: 100%;
   display: flex;
   align-items: center;
   transition: all 0.5s ease-in-out;
 }
-header ul .active{
+header .links .active{
   border-bottom: 1px solid var(--second_color);
 }
-header ul li:hover:not(.search){
+header .links li:hover:not(.search){
   border-bottom: 1px solid var(--second_color);
 }
-header ul li:hover a{
+header .links li:hover a{
   color: var(--second_color);
 }
-header ul .active a{
+header .links .active a{
   color: var(--second_color);
 }
-header ul a{
+header .links a{
   color: var(--font_color);
   font-weight: 400;
   transition: all 0.5s;
 }
-header ul .search{
+header .links .search{
   position: relative;
   margin-left: 29px;
 }
-header ul .search i{
+header .links .search i{
   font-size: 20px;
 }
-header ul .search::before{
+header .links .search::before{
   content: "";
   position: absolute;
   height: 37px;
   width: 1.5px;
   right: 30px;
   background-color: var(--font_color);
+}
+
+/* media query  */
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  header .links{
+    display: none;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  header .links{
+    display: none;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  header .links{
+    display: flex;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  
 }
 /* landing style  */
 .main{
@@ -150,6 +234,11 @@ header ul .search::before{
   z-index: 2;
   padding: 50px;
   padding-left: 150px !important;
+}
+@media (max-width: 768px){
+  .text{
+    width: 100%;
+  }
 }
 .text h1{
   color: var(--font_color);
@@ -274,6 +363,32 @@ header ul .search::before{
   justify-content: center;
   align-items: center;
   margin-top: -66px;
+}
+@media (max-width: 768px){
+  .serv2{
+    grid-template-columns: repeat(1,auto);
+    padding: 10px;
+  }
+  .serv2 .icon{
+    position: relative;
+    font-size: 50px;
+    color: var(--main-color);
+    left: 44%;
+  }
+  .serv2 .text2{
+    padding: 89px 65px !important;
+  }
+  .serv2 .text2 h1 {
+  text-align: center;
+  }
+  .serv{
+  height: 250vh;
+  }
+  .serv2 .text2 p{
+  text-align: center;
+  }
+  .title h3{
+  width: 100% !important;
 }
 .serv2 .icon{
   position: absolute;
