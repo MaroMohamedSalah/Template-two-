@@ -746,11 +746,12 @@ header .links .search::before{
   border: var(--main-color) solid 1px !important;
 }
 .skills .container .skill h1{
-  margin: 32px 0 30px;
+  margin: 27px 0 30px;
   font-weight: normal;
   text-align: center;
   text-transform: uppercase;
   color: var(--main-color);
+  align-self: flex-start;
 }
 .skills .container .skill p{
   text-align: center;
